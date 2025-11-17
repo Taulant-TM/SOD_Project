@@ -1,0 +1,24 @@
+# OS junk
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.env
+.venv
+
+# Dataset (do NOT upload large files)
+data/DUTS-TR/
+data/DUTS-TE/
+
+# Model outputs
+checkpoints/
+saved_models/
+logs/
+
+# VS Code settings
+.vscode/
