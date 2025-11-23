@@ -1,0 +1,9 @@
+tensorflow==2.12
+numpy
+opencv-python
+matplotlib
+scikit-learn
+tqdm
+gradio
+pillow
+cv2

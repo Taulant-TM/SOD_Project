@@ -1,24 +1,26 @@
-# OS junk
 .DS_Store
 
-# Python
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 
-# Virtual environments
 .env
 .venv
 
-# Dataset (do NOT upload large files)
-data/DUTS-TR/
-data/DUTS-TE/
+data/
+# data/DUTS-TR/
+# data/DUTS-TE/
+# data/dataset.npz
+outputs/
+# predictions_old/
+# predictions_old_2/
+# best_old_model.keras
+# best_old2_model.keras
+scripts/
+#check_data.py
+debug_img.png
+debug_mask.png
 
-# Model outputs
-checkpoints/
-saved_models/
-logs/
 
-# VS Code settings
 .vscode/

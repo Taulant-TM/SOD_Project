@@ -10,7 +10,7 @@ from sod_model import (build_sod_model, combined_bce_iou_loss, soft_iou_batch,
 DATA_ROOT = "data"
 IMG_SIZE = (128, 128)
 BATCH_SIZE = 16
-EPOCHS = 15
+EPOCHS = 35
 PATIENCE = 6
 LR = 1e-3
 BASE_FILTERS = 32
