@@ -63,14 +63,6 @@ def augment_numpy(image: np.ndarray, mask: np.ndarray):
 
 
 def load_paths_from_dir(base_dir: str):
-    """
-    Assumes dataset layout:
-        base_dir/DUTS-TR/DUTS-TR-Image
-        base_dir/DUTS-TR/DUTS-TR-Mask
-        base_dir/DUTS-TE/DUTS-TE-Image
-        base_dir/DUTS-TE/DUTS-TE-Mask
-    Returns lists of train_image_paths, train_mask_paths, test_image_paths, test_mask_paths
-    """
     tr_img_dir = os.path.join(base_dir, "DUTS-TR", "DUTS-TR-Image")
     tr_mask_dir = os.path.join(base_dir, "DUTS-TR", "DUTS-TR-Mask")
     te_img_dir = os.path.join(base_dir, "DUTS-TE", "DUTS-TE-Image")
@@ -119,10 +111,6 @@ def build_and_save_npz(all_image_paths: List[str], all_mask_paths: List[str], ou
 def make_tf_dataset_from_paths(image_paths: List[str], mask_paths: List[str],
                             img_size: Tuple[int, int] = IMAGE_SIZE, batch_size: int = 8,
                             augment: bool = False, shuffle: bool = False):
-    """
-    Returns a tf.data.Dataset that yields (image, mask) with shapes (H,W,3) and (H,W,1) in float32.
-    Uses numpy_function to call OpenCV-based loader for correctness.
-    """
     def _load_pair(img_p, mask_p):
         img = tf.numpy_function(lambda p: load_image(p), [img_p], tf.float32)
         mask = tf.numpy_function(lambda p: load_mask(p), [mask_p], tf.float32)
